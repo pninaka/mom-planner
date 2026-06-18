@@ -1,0 +1,16 @@
+# .NET
+MomPlannerAPI/.vs/
+MomPlannerAPI/bin/
+MomPlannerAPI/obj/
+MomPlannerAPI/*.db
+MomPlannerAPI/*.db-shm
+MomPlannerAPI/*.db-wal
+
+# Angular
+mom-planner/node_modules/
+mom-planner/dist/
+
+# General
+.env
+*.user
+.DS_Store

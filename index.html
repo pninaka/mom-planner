@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>פיד - לינקדאין</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== ניווט עליון ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="nav-logo">
+        <svg viewBox="0 0 34 34" width="34" height="34" fill="#fff">
+          <path d="M34 2.5A2.5 2.5 0 0031.5 0h-29A2.5 2.5 0 000 2.5v29A2.5 2.5 0 002.5 34h29a2.5 2.5 0 002.5-2.5v-29zM10 13h-4v14h4V13zm-2-7a2.3 2.3 0 110 4.6A2.3 2.3 0 018 6zm20 21h-4v-7c0-1.7-.6-2.8-2-2.8-1.1 0-1.7.7-2 1.4-.1.3-.1.7-.1 1.1V27h-4V13h4v1.9c.5-.8 1.5-2 3.7-2 2.7 0 4.4 1.8 4.4 5.6V27z"/>
+        </svg>
+      </div>
+      <div class="nav-search">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="#666"><path d="M21.7 20.3l-4.6-4.6A8.3 8.3 0 1016 17.1l4.6 4.6 1.1-1.4zM10 16.5a6.5 6.5 0 110-13 6.5 6.5 0 010 13z"/></svg>
+        <input type="text" placeholder="חיפוש" />
+      </div>
+      <nav class="nav-links">
+        <a class="nav-item active" href="#">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M23 9.5L12 1 1 9.5V22h8v-6h6v6h8V9.5z" fill="currentColor"/></svg>
+          <span>בית</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2a5 5 0 100 10A5 5 0 0012 2zM2 20c0-4.4 4.5-8 10-8s10 3.6 10 8H2z" fill="currentColor"/></svg>
+          <span>רשת שלי</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M20 6H4v14h16V6zM4 4h16a2 2 0 012 2v14a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4.5 7h15L12 11z" fill="currentColor"/></svg>
+          <span>הודעות</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 17.9V18h-2v1.9A8 8 0 014.1 13H6v-2H4.1A8 8 0 0111 4.1V6h2V4.1A8 8 0 0119.9 11H18v2h1.9A8 8 0 0113 19.9zM12 14a2 2 0 100-4 2 2 0 000 4z" fill="currentColor"/></svg>
+          <span>עבודות</span>
+        </a>
+        <div class="nav-avatar">
+          <img src="https://i.pravatar.cc/36?img=3" alt="פרופיל" />
+          <span>אני ▾</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== תוכן ראשי ===== -->
+  <main class="feed-layout">
+
+    <!-- עמודה שמאלית: כרטיס פרופיל -->
+    <aside class="sidebar-left">
+      <div class="profile-card">
+        <div class="profile-bg"></div>
+        <img class="profile-avatar" src="https://i.pravatar.cc/72?img=3" alt="תמונת פרופיל" />
+        <div class="profile-info">
+          <h3>נחום ישראלי</h3>
+          <p>מפתח Full Stack | React · Node.js</p>
+        </div>
+        <hr />
+        <div class="profile-stats">
+          <div class="stat-row">
+            <span>צפיות בפרופיל</span>
+            <strong>142</strong>
+          </div>
+          <div class="stat-row">
+            <span>הופעות בחיפוש</span>
+            <strong>87</strong>
+          </div>
+        </div>
+        <hr />
+        <a class="premium-link" href="#">נסה Premium בחינם</a>
+      </div>
+    </aside>
+
+    <!-- עמודה מרכזית: פיד -->
+    <section class="feed-center">
+
+      <!-- תיבת פרסום פוסט -->
+      <div class="post-composer">
+        <img src="https://i.pravatar.cc/48?img=3" alt="אני" />
+        <button class="composer-btn" onclick="openComposer()">מה עובר עליך, נחום?</button>
+      </div>
+      <div class="composer-actions">
+        <button><span>📷</span> תמונה / וידאו</button>
+        <button><span>📅</span> אירוע</button>
+        <button><span>✏️</span> כתוב מאמר</button>
+      </div>
+
+      <!-- פוסטים -->
+      <div id="feed" class="feed"></div>
+    </section>
+
+    <!-- עמודה ימנית: חדשות -->
+    <aside class="sidebar-right">
+      <div class="news-card">
+        <h4>חדשות לינקדאין</h4>
+        <ul>
+          <li><strong>בינה מלאכותית מגייסת</strong> · לפני 2 שעות</li>
+          <li><strong>שוק ההייטק מתאושש</strong> · לפני 5 שעות</li>
+          <li><strong>טרנדים בפיתוח Web</strong> · לפני 8 שעות</li>
+          <li><strong>חברות סטארטאפ מובילות</strong> · לפני יום</li>
+          <li><strong>טיפים לראיון עבודה</strong> · לפני יומיים</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== מודל תגובות ===== -->
+  <div class="comments-overlay" id="commentsOverlay" onclick="closeComments(event)">
+    <div class="comments-modal" id="commentsModal">
+      <button class="modal-close" onclick="closeCommentsBtn()">✕</button>
+
+      <!-- הפוסט המקורי בתוך המודל -->
+      <div class="modal-post" id="modalPost"></div>
+
+      <div class="comments-section">
+        <h3 class="comments-title">תגובות</h3>
+        <div class="comments-list" id="commentsList"></div>
+
+        <!-- תיבת תגובה חדשה -->
+        <div class="new-comment">
+          <img src="https://i.pravatar.cc/36?img=3" alt="אני" />
+          <div class="comment-input-wrap">
+            <input type="text" id="commentInput" placeholder="הוסף תגובה..." onkeydown="submitComment(event)" />
+            <button class="send-btn" onclick="sendComment()">שלח</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
